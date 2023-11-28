@@ -1,11 +1,19 @@
+// dev 및 design으로 변수로 모듈을 정의하고 해당 경로에 있는 파일에서
+// export된 객체들을 가져온다.
+import dev from "./pages/dev.js";
+import design from "./pages/design.js";
+
 // 라우터 함수구현
 const router = async () => {
     // path 경로를 설정하고 view를 반환하는데
-    // console.log를 활용하여 해당페이지에 잘 출력되는지 확인하는 단계 
+    // console.log를 활용하여 해당페이지에 잘 출력되는지 확인하는 단계
+
+    // 이전에는 콘솔 출력이 잘되는지 확인했다면 지금은 dev.js 와 design.js에 있는
+    // 파일들을 각 경로별 뷰로 반환하게 구현한다. 
     const routes = [
-        { path: "/", view: () => console.log("메인 페이지") },
-        { path: "/design", view: () => console.log("디자인 페이지") },
-        { path: "/dev", view: () => console.log("개발 페이지") }
+        { path: "/", view: dev },
+        { path: "/design", view: design },
+        { path: "/dev", view: dev }
     ];
 
     // 현재 URL과 라우트들을 맵핑하여 일치하는 라우트를 찾는다.
@@ -20,7 +28,14 @@ const router = async () => {
     let match = potentialMatches.find((potentialMatch) => potentialMatch.isMatch);
 
     // 뷰를 실행해서 보여준다.
-    console.log(match.route.view());
+    // console.log(match.route.view());
+
+    // 매치된 라우트에 뷰를 생성하고
+    const page = new match.route.view();
+
+    // 페이지에 맞는 뷰의 HTML 요소를 가져온다.
+    // id가 app인 HTML을 가져와서 화면에 뿌려준다.
+    document.querySelector("#app").innerHTML = await page.getHtml();
 }
 
 // 브라우저 히스토리 변화감지
