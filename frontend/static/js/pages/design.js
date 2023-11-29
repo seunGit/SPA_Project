@@ -1,13 +1,12 @@
 export default class {
     constructor() {
-        document.title = "design";
+        document.title = "토스 기술 블로그, 토스테크";
     }
     async getHtml() {
         return `
         <div class="post_container">
             <div class="post_list_container">
             <div class="post_name">디자인</div>
-
                 <ul class="post_list">
                     <li>
                         <a href="#">
