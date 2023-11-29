@@ -99,6 +99,17 @@
     border-radius: 14px;
     margin-right: 48px;
     object-fit: cover;
+    transition: transform 0.2s ease-in-out,
+                box-shadow 0.2s ease-in-out;
+}
+
+.post_content:hover img {
+    transform: translateY(-7px);
+    box-shadow: 1px 10px 40px #00000010, -1px 10px 40px #00000010;
+}
+
+.post_content:hover .menu_text .title {
+    color: #3182F6;
 }
 
 .menu_text {
