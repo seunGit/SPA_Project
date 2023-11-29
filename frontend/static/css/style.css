@@ -1,7 +1,13 @@
 @import url(reset.css);
+@import url('https://static.toss.im/tps/main.css');
+@import url('https://static.toss.im/tps/others.css');
 
 .nav {
     border-bottom: 0.1px solid #ccc;
+    position: sticky;
+    background-color: white;
+    top: 0;
+    z-index: 999;
 }
 
 .nav_container {
@@ -9,9 +15,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0px 270px;
+    padding: 0px 17%;
     font-family: 'Kanit', sans-serif;
-
 }
 
 .logo_text_bold {
@@ -53,8 +58,76 @@
     color: white;
 }
 
-
 .nav_item a {
     text-decoration: none;
     color: #777;
+}
+
+.post_container {
+    margin: 0px 340px;
+}
+
+.post_list_container {
+    margin: 0px;
+}
+
+.post_list li {
+    margin: 0px 0px 80px;
+}
+
+.post_list a {
+    text-decoration: none;
+}
+
+.post_name {
+    font-family: 'Toss Product Sans';
+    color: #333d4b;
+    font-weight: 600;
+    font-size: 36px;
+    margin: 52px 0px 32px;
+    padding: 20px 0px;
+}
+
+.post_content {
+    display: flex;
+    align-items: center;
+}
+
+.post_content img {
+    width: 240px;
+    height: 240px;
+    border-radius: 14px;
+    margin-right: 48px;
+    object-fit: cover;
+}
+
+.menu_text {
+    font-family: 'Toss Product Sans';
+    display: flex;
+    flex-direction: column;
+    width: 590px;
+    margin: 20px 0px;
+}
+
+.menu_text span {
+    margin: 5px 0;
+    line-height: 1.5;
+}
+
+.menu_text .title {
+    color: #333d4b;
+    font-size: 36px;
+    font-weight: 600;
+    margin: 0px 0px 14px;
+}
+
+.menu_text .content {
+    color: #4e5968;
+    font-size: 17px;
+    margin: 0px 0px 12px;
+}
+
+.menu_text .date {
+    color: #8b95a1;
+    font-size: 15px;
 }
