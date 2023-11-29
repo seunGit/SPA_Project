@@ -1,6 +1,6 @@
 export default class {
     constructor() {
-        document.title = "dev";
+        document.title = "토스 기술 블로그, 토스테크";
     }
     async getHtml() {
         return `
